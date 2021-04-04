@@ -17,3 +17,55 @@
   justify-content: center;
 }
 
+.list_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+}
+
+.todo_list {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit_icon {
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.edit_icon:hover {
+  color:royalblue
+}
+
+.delete_icon {
+  cursor: pointer;
+}
+
+.delete_icon:hover {
+  color:orangered;
+}
+
+.centered_modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media all and (min-width: 420px) {
+  .list_container {
+    margin: 1em 10em;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .list_container {
+    margin: 1em 15em;
+  }
+  .edit_icon {
+    margin-right: 2em;
+  }
+}

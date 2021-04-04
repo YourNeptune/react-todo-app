@@ -47,11 +47,11 @@ function App() {
         </Button>
       </form>
 
-      <ul>
+      <div className='list_container'>
         {todos.map((todo) => (
             <Todo todo={todo}/>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

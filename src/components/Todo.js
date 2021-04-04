@@ -1,19 +1,21 @@
-import {List, ListItem, ListItemText, ListItemAvatar, Modal, makeStyles, Button, Divider} from '@material-ui/core'
+import {List, ListItem, ListItemText, Modal, makeStyles, Button, Divider, Slide} from '@material-ui/core'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff'
 import EditIcon from '@material-ui/icons/Edit';
 import { useState } from 'react'
-import '../css/Todo.css'
 import db from '../firebase'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        position: 'absolute',
-        width: 400,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems:'center',
+        width: '11em',
+        height: '4em',
         backgroundColor: theme.palette.background.paper,
         border: '2px solid #000',
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
-    }
+    },
 }));
 
 const Todo = ({todo}) => {
@@ -42,22 +44,25 @@ const Todo = ({todo}) => {
         <Modal
             open={open}
             onClose={() => toogleOpenState(open)}
+            className='centered_modal'
         >
+        <Slide direction="up" in={open} mountOnEnter unmountOnExit>
             <div className={classes.paper}>
                 <input value={input} onChange={e => setInput(e.target.value)}/>
                 <Button onClick={updateTodo}>Save</Button>
             </div>
+        </Slide>
         </Modal>
-        <div className='list_container'>
-            <List className='todo_list'>
-                <ListItem>
-                    <ListItemText primary={todo.todo} secondary='Deadline ⏰' />
-                </ListItem>
-                <EditIcon onClick={() => toogleOpenState(open)}/>
-                <HighlightOffIcon onClick={deleteTodo} />
-            </List>
-            <Divider/>
-        </div>
+        
+        <List className='todo_list'>
+            <ListItem>
+                <ListItemText primary={todo.todo} secondary='Deadline ⏰' />
+            </ListItem>
+            <EditIcon className='edit_icon' onClick={() => toogleOpenState(open)}/>
+            <HighlightOffIcon className='delete_icon' onClick={deleteTodo} />
+        </List>
+        <Divider/>
+   
     </>
     )
 }
