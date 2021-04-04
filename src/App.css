@@ -9,19 +9,25 @@
 }
 
 .top-bar {
-  margin-bottom: 10em;
+  margin-bottom: 7em;
 }
 
 .form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin: 0 1em ;
+}
+
+.form div {
+    margin-bottom: 1em;
 }
 
 .list_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 1em;
+  margin: 2em 1em;
 }
 
 .todo_list {
@@ -57,13 +63,20 @@
 
 @media all and (min-width: 420px) {
   .list_container {
-    margin: 1em 10em;
+    margin: 1em 5em;
+  }
+  .form {
+    flex-direction: row;
+  }
+  .form div {
+    margin-right: 1em;
+    margin-bottom: 0;
   }
 }
 
-@media all and (min-width: 800px) {
+@media all and (min-width: 1000px) {
   .list_container {
-    margin: 1em 15em;
+    margin: 2em 13em;
   }
   .edit_icon {
     margin-right: 2em;

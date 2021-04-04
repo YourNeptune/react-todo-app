@@ -56,7 +56,7 @@ const Todo = ({todo}) => {
         
         <List className='todo_list'>
             <ListItem>
-                <ListItemText primary={todo.todo} secondary='Deadline ⏰' />
+                <ListItemText primary={todo.todo} secondary={`⏰ Deadline: ${todo.ddl}`} />
             </ListItem>
             <EditIcon className='edit_icon' onClick={() => toogleOpenState(open)}/>
             <HighlightOffIcon className='delete_icon' onClick={deleteTodo} />
