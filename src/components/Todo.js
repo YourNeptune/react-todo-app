@@ -1,4 +1,4 @@
-import {List, ListItem, ListItemText, ListItemAvatar, Modal, makeStyles, Button} from '@material-ui/core'
+import {List, ListItem, ListItemText, ListItemAvatar, Modal, makeStyles, Button, Divider} from '@material-ui/core'
 import HighlightOffIcon from '@material-ui/icons/HighlightOff'
 import EditIcon from '@material-ui/icons/Edit';
 import { useState } from 'react'
@@ -48,16 +48,16 @@ const Todo = ({todo}) => {
                 <Button onClick={updateTodo}>Save</Button>
             </div>
         </Modal>
-        <List className='todo_list'>
-            <ListItemAvatar>
-                
-            </ListItemAvatar>
-            <ListItem>
-                <ListItemText primary={todo.todo} secondary='Deadline ⏰' />
-            </ListItem>
-            <EditIcon onClick={() => toogleOpenState(open)}/>
-            <HighlightOffIcon onClick={deleteTodo} />
-        </List>
+        <div className='list_container'>
+            <List className='todo_list'>
+                <ListItem>
+                    <ListItemText primary={todo.todo} secondary='Deadline ⏰' />
+                </ListItem>
+                <EditIcon onClick={() => toogleOpenState(open)}/>
+                <HighlightOffIcon onClick={deleteTodo} />
+            </List>
+            <Divider/>
+        </div>
     </>
     )
 }

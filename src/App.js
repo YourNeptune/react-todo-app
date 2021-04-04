@@ -1,9 +1,10 @@
 import './App.css';
 import {useState, useEffect} from 'react'
-import { Button, FormControl, InputLabel, Input } from '@material-ui/core'
+import { Button, FormControl, InputLabel, Input, Toolbar, AppBar } from '@material-ui/core'
 import Todo from './components/Todo'
 import db from './firebase'
 import firebase from 'firebase'
+
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -27,8 +28,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Todo App</h1>
-      <form>
+      <div className='top-bar'>
+        <AppBar position="fixed">
+          <Toolbar>
+            <h1 className='bar-title'>Todo App</h1>
+          </Toolbar>
+       </AppBar>
+      </div>
+ 
+      <form className='form'>
         <FormControl>
           <InputLabel>Add todo</InputLabel>
           <Input value={input} onChange={(e) => setInput(e.target.value)}/>
