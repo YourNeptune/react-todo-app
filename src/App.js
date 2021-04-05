@@ -17,7 +17,7 @@ function App() {
     db.collection('todos').add({
       todo: input,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      ddl: ddl
+      ddl: ddl.slice(0, 10) + ' at ' + ddl.slice(11)
     })
     setInput('')
   }
@@ -65,11 +65,13 @@ function App() {
         </Button>
       </form>
 
-      <div className='list_container'>
+      <ul className='list_container'>
         {todos.map((todo) => (
-            <Todo todo={todo} key={todo.id}/>
+            <li key={todo.id} style={{listStyle:'none'}} className='todo'>
+              <Todo todo={todo}/>
+            </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

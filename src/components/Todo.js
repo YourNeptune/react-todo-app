@@ -38,6 +38,7 @@ const Todo = ({todo}) => {
 
         setOpen(false)
     }
+   
 
     return (
     <>
