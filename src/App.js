@@ -9,7 +9,7 @@ import firebase from 'firebase'
 function App() {
   const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
-  const [ddl, setDDL] = useState('2021-01-24T10:30')
+  const [ddl, setDDL] = useState( new Date().toISOString().slice(0, 16))
 
   const addTodo = (e) => {
     e.preventDefault()
