@@ -1,6 +1,6 @@
 import './App.css';
 import {useState, useEffect} from 'react'
-import { Button, FormControl, InputLabel, Input, Toolbar, AppBar, TextField } from '@material-ui/core'
+import { Button, FormControl, InputLabel, Input, Toolbar, AppBar, TextField, FormHelperText } from '@material-ui/core'
 import Todo from './components/Todo'
 import db from './firebase'
 import firebase from 'firebase'
@@ -10,6 +10,7 @@ function App() {
   const [todos, setTodos] = useState([])
   const [input, setInput] = useState('')
   const [ddl, setDDL] = useState( new Date().toISOString().slice(0, 16))
+  const maxLength = 16
 
   const addTodo = (e) => {
     e.preventDefault()
@@ -45,7 +46,8 @@ function App() {
       <form className='form'>
         <FormControl>
           <InputLabel>Add todo</InputLabel>
-          <Input value={input} onChange={(e) => setInput(e.target.value)}/>
+          <Input value={input} onChange={(e) => setInput(e.target.value)} inputProps={{ maxlength: maxLength}}/>
+          <FormHelperText id="component-helper-text">{`${input.length}/${maxLength}`}</FormHelperText>
         </FormControl>
 
         <TextField
@@ -59,10 +61,12 @@ function App() {
             shrink: true,
           }}
       />
-
-        <Button variant="contained" color="primary" type='submit' onClick={addTodo} disabled={!input}>
-          Add Todo
-        </Button>
+        <div className='add_btn_container'>
+          <Button className='add_btn' variant="contained" color="primary" type='submit' onClick={addTodo} disabled={!input}>
+            Add Todo
+          </Button>
+        </div>
+        
       </form>
 
       <ul className='list_container'>

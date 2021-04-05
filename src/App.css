@@ -39,18 +39,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
-.edit_icon, .delete_icon {
+.edit_icon, .delete_icon, .mark_done {
   margin-right: 1em;
   cursor: pointer;
+}
+
+.mark_done {
+  width: 10em;
 }
 
 .edit_icon:hover {
   color:royalblue
 }
-
-
 
 .delete_icon:hover {
   color:orangered;
@@ -60,6 +63,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.add_btn {
+  width: 100%;
 }
 
 
@@ -74,6 +81,11 @@
     margin-right: 1em;
     margin-bottom: 0;
   }
+  .add_btn_container {
+    display: flex;
+    align-items: center;
+  }
+ 
 }
 
 @media all and (min-width: 1000px) {
