@@ -42,13 +42,9 @@
   overflow: scroll;
 }
 
-.edit_icon, .delete_icon, .mark_done {
+.edit_icon, .delete_icon {
   margin-right: 1em;
   cursor: pointer;
-}
-
-.mark_done {
-  width: 10em;
 }
 
 .edit_icon:hover {

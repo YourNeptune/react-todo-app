@@ -71,7 +71,7 @@ function App() {
 
       <ul className='list_container'>
         {todos.map((todo) => (
-            <li key={todo.id} style={{listStyle:'none'}} className='todo'>
+            <li key={todo.id} style={{listStyle:'none'}} >
               <Todo todo={todo}/>
             </li>
         ))}

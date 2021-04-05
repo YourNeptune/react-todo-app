@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 const Todo = ({todo}) => {
     const [open, setOpen] = useState(false)
     const [input, setInput] = useState(todo.todo)
+   
     const classes = useStyles()
 
     const deleteTodo = () => {
@@ -59,7 +60,6 @@ const Todo = ({todo}) => {
             <ListItem>
                 <ListItemText primary={todo.todo} secondary={`⏰ Deadline: ${todo.ddl}`} />
             </ListItem>
-            <p className='mark_done'>Mark as done</p>
             <EditIcon className='edit_icon' onClick={() => toogleOpenState(open)}/>
             <HighlightOffIcon className='delete_icon' onClick={deleteTodo} />
         </List>
