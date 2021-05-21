@@ -39,7 +39,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: scroll;
 }
 
 .edit_icon, .delete_icon {
